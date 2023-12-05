@@ -1,0 +1,10 @@
+baseURL = 'https://stbo0013.stud.unixag.de/public/'
+languageCode = 'de-de'
+title = 'IoT Workshop'
+theme = 'hugo-theme-learn'
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+landingPageURL = "/public"
+landingPageName = "<i class='fas fa-home'></i> Home"
