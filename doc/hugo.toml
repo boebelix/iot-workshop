@@ -6,5 +6,5 @@ theme = 'hugo-theme-learn'
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-landingPageURL = "/public"
+landingPageURL = "/iot-workshop-doc/"
 landingPageName = "<i class='fas fa-home'></i> Home"
