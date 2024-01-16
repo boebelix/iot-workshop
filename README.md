@@ -1,8 +1,25 @@
-# iot-workshop
-Participants will gain their first experience of the internet of things (IoT). Technologies such as radio transmission, MQTT and visualization will be presented.
+# IoT-Workshop
 
-# Quickstart
-## Load Reprository
+## Requirements
+Python (Version 3.12)
+Pip
+
+## Quickstart
+
+### Optional: Create Virtual Environment
 ```
-git clone --recursive <Repository-URL>
+python -m venv venv
 ```
+#### Activate Virtual Environment Windows 
+```
+venv\Scripts\activate
+```
+#### Activate Virtual Environment macOS und Linux 
+```
+source venv/bin/activate
+```
+### Install Requirements
+```
+pip install -r requirements.txt
+```
+
