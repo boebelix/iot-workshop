@@ -42,13 +42,14 @@ async def listen():
             if message.topic.matches(testing_button_topic):
                 testing_button = message.payload.decode("UTF-8")
                 print(f"[{testing_button_topic}] {testing_button}")
+                await client.publish(topic=testing_button_topic, payload="OFF")
 
             if message.topic.matches(previous_light_topic):
                 previous_light_status = message.payload.decode("UTF-8")
                 print(f"[{previous_light_topic}] {previous_light_status}")
 
 
-async def lighting_show():
+async def light_show():
     global previous_light_status
     global testing_button
 
@@ -59,7 +60,6 @@ async def lighting_show():
     ) as client:
         while True:
             if previous_light_status == "ON" or testing_button == "ON":
-                await client.publish(topic=testing_button_topic, payload="OFF")
                 await asyncio.sleep(3)
                 await client.publish(topic=light_topic, payload="ON")
                 await asyncio.sleep(2)
@@ -74,7 +74,7 @@ async def main():
 
     async with asyncio.TaskGroup() as tg:
         tg.create_task(listen())
-        tg.create_task(lighting_show())
+        tg.create_task(light_show())
 
 
 if __name__ == '__main__':
